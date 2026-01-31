@@ -1,19 +1,19 @@
 modLoader="javafml"
-loaderVersion="${loader_version_range}"
-license="${mod_license}"
+loaderVersion="[47,)"
+license="MIT"
 [[mods]]
 modId="test1"
-version="${mod_version}"
-displayName="${mod_name}"
+version="1.0"
+displayName="Test Mod"
+description="Test mod"
 authors="${mod_authors}"
-description='''${mod_description}'''
-[[dependencies.test1]]
+[[dependencies.${mod_id}]]
     modId="forge"
     mandatory=true
     versionRange="${forge_version_range}"
     ordering="NONE"
     side="BOTH"
-[[dependencies.test1]]
+[[dependencies.${mod_id}]]
     modId="minecraft"
     mandatory=true
     versionRange="${minecraft_version_range}"
