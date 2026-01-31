@@ -1,7 +1,6 @@
 name: Build Forge Mod
 
 on:
-  push:
   workflow_dispatch:
 
 jobs:
@@ -17,14 +16,15 @@ jobs:
         distribution: temurin
         java-version: 17
 
-    - name: Grant execute permission for gradlew
+    - name: Grant execute permission
       run: chmod +x gradlew
 
-    - name: Build mod
-      run: ./gradlew build
+    - name: Build
+      run: ./gradlew build reobfJar
 
-    - name: Upload mod jar
+    - name: Upload jar
       uses: actions/upload-artifact@v4
       with:
         name: mod-jar
-        path: build/libs/*.jar
+        path: build/libs/
+
